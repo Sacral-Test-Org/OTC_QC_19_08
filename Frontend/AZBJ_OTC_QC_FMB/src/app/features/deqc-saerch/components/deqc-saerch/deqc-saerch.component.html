@@ -1,0 +1,51 @@
+<div class="search-form">
+  <form [formGroup]="searchForm">
+    <div class="form-group">
+      <label for="start_date">Start Date:</label>
+      <input id="start_date" formControlName="start_date" type="text" placeholder="dd/mm/yyyy" />
+    </div>
+    <div class="form-group">
+      <label for="end_date">End Date:</label>
+      <input id="end_date" formControlName="end_date" type="text" placeholder="dd/mm/yyyy" (change)="onToDateChange($event)" />
+    </div>
+    <div class="form-group">
+      <label for="application_number">Application Number:</label>
+      <input id="application_number" formControlName="application_number" type="text" />
+    </div>
+    <div class="form-group" id="partnerTypeDropdown" style="position: absolute; top: 548px; left: 321px; width: 120px; height: 18px; background-color: white; color: black; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: 500;">
+      <label for="partner_type" style="font-weight: bold; margin-right: 5px;">Partner Type:</label>
+      <select id="partner_type" formControlName="partner_type">
+        <option *ngFor="let type of partnerTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="form-group" id="statusDropdown" style="position: absolute; top: 63px; left: 428px; width: 91px; height: 19px;">
+      <label for="status">Status:</label>
+      <select id="status" formControlName="status" class="status-dropdown">
+        <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+    <div class="form-buttons">
+      <button type="button" (click)="onSearchButtonClick()" [disabled]="!isSearchEnabled">Search</button>
+      <button type="button" (click)="onClearButtonClick()">Clear</button>
+      <button type="button" (click)="onSaveButtonClick()">Save</button>
+      <button type="button" (click)="onViewDocs()">View Docs</button>
+      <button type="button" (click)="openUploadForms()" id="upload-docs-button">Upload Docs</button>
+      <button type="button" (click)="onQcEditButtonClick()" class="qc-edit-button">QC/Edit</button>
+      <button type="button" id="uw-comments-button" (click)="onUwCommentsButtonClick()">UW Comments</button>
+      <button type="button" (click)="onRejectButtonClick()">Reject</button>
+      <button type="button" class="ok-button" (click)="okButtonClickHandler()">OK</button>
+    </div>
+    <div class="rejection-reason" *ngIf="showRejectionReason">
+      <label for="rejection_reason">Reason for Rejection:</label>
+      <textarea id="rejection_reason" formControlName="rejection_reason"></textarea>
+      <button type="button" (click)="onConfirmRejection()">OK</button>
+    </div>
+    <div id="reason-link-section" *ngIf="isReasonLinkVisible">
+      <label for="reason_link_field">Reason Link:</label>
+      <input id="reason_link_field" #reasonLinkField type="text" formControlName="reason_link" />
+    </div>
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

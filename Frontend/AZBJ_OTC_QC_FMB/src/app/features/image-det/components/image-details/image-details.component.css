@@ -1,0 +1,86 @@
+/* Background color for the image details section */
+.image-details-section {
+  background-color: gray;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Style for text fields */
+.image-details-section input[type="text"],
+.image-details-section input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for labels */
+.image-details-section label {
+  display: block;
+  font-weight: bold;
+  color: darkblue;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Style for buttons */
+.image-details-section button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Specific styles for View Image button */
+.image-details-section .view-image-button {
+  background-color: gray;
+  color: darkblue;
+}
+
+/* Specific styles for Hide button */
+.image-details-section .hide-button {
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 155px;
+  left: 137px;
+  width: 93px;
+  height: 16px;
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: 300;
+}
+
+/* Style for scrollbar */
+.image-details-section {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.image-details-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.image-details-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.image-details-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Style for IMAGES canvas */
+.images-canvas {
+  width: 720px;
+  height: 378px;
+}
+
+/* Style for WINDOW1 window */
+.window1 {
+  width: 850px;
+  height: 550px;
+}

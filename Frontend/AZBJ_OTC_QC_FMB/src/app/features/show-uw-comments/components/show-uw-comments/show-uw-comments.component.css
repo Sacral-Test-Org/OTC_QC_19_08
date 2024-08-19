@@ -1,0 +1,59 @@
+/* Styles for the underwriter comments section */
+
+/* User ID field */
+.user-id {
+  background-color: #f0f0f0; /* Gray background */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Date & Time field */
+.date-time {
+  background-color: #f0f0f0; /* Gray background */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* UW Comments field */
+.uw-comments {
+  background-color: #f0f0f0; /* Gray background */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  white-space: pre-wrap; /* Support multiline text */
+  max-length: 1000px;
+}
+
+/* Add Comments button */
+.add-comments {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Refresh button */
+.refresh {
+  background-color: #28a745; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Comments field */
+.comments-field {
+  position: absolute;
+  left: 162px;
+  top: 41px;
+  width: 171px;
+  height: 25px;
+  background-color: gray;
+  resize: none;
+}

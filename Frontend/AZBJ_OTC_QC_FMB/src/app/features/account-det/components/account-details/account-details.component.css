@@ -1,0 +1,152 @@
+/* Styles for Account Details Component */
+
+/* General Styles */
+.account-details-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields */
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Dropdowns */
+select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Penny Drop Status Message */
+.penny-drop-status {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.penny-drop-status.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.penny-drop-status.failure {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Same Bank Dtls Button */
+button.same-bank-dtls {
+  background-color: gray;
+  color: black;
+  font-weight: bold;
+}
+
+/* Relationship Type Dropdown Field and Label */
+.relationship-type-container {
+  position: absolute;
+  top: 485px;
+  left: 295px;
+  width: 135px;
+  height: 16px;
+}
+
+.relationship-type-label {
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+  font-weight: bold;
+  color: black;
+  margin-right: 3px;
+}
+
+.relationship-type-dropdown {
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+  font-weight: medium;
+  color: black;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+/* Bypass Bank Details Checkbox */
+.bypass-bank-details-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bypass-bank-details-label {
+  font-family: 'MS Sans Serif';
+  font-size: 10pt;
+  font-weight: bold;
+  color: black;
+  margin-right: 10px;
+}
+
+/* Disabled Fields */
+input[disabled] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* IFSC Code Field and Label */
+.ifsc-code-container {
+  position: absolute;
+  left: 295px;
+  top: 437px;
+  width: 169px;
+  height: 16px;
+}
+
+.ifsc-code-label {
+  font-family: 'MS Sans Serif';
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.ifsc-code-input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  color: #000000;
+  font: bold 12px "MS Sans Serif";
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  padding: 2px;
+}

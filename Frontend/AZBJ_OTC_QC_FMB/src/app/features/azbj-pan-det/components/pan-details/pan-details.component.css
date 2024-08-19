@@ -1,0 +1,48 @@
+/* Styles for PAN details component */
+
+.pan-details-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.pan-details-container .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.pan-details-container .form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.pan-details-container .form-group input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 300px;
+}
+
+/* Specific styles for each field */
+.pan-number {
+  flex: 1 1 100%;
+}
+
+.pan-status {
+  flex: 1 1 100%;
+}
+
+.name-match {
+  flex: 1 1 50px;
+}
+
+.dob-match {
+  flex: 1 1 50px;
+}
+
+.seeding-flag {
+  display: none;
+}

@@ -1,0 +1,16 @@
+<div class="same-bank-details-form">
+  <h2>Same Bank Details</h2>
+  <form>
+    <div class="form-group">
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="accountNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="ifscCode">IFSC Code:</label>
+      <input type="text" id="ifscCode" name="ifscCode" [(ngModel)]="ifscCode" required>
+    </div>
+    <div class="form-group">
+      <button type="button" (click)="checkDetails()">Check Details</button>
+    </div>
+  </form>
+</div>

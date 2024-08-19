@@ -1,0 +1,40 @@
+<div class="image-details-section" style="background-color: gray; padding: 20px; width: 720px; height: 378px;">
+  <div class="image-detail" *ngFor="let image of images; let i = index" [hidden]="i >= 5" style="margin-bottom: 20px;">
+    <div class="form-group">
+      <label for="imagePath">Image Path</label>
+      <input type="text" id="imagePath" [(ngModel)]="image.imagePath" maxlength="500" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="proposalNumber" style="color: darkblue; text-align: center;">Proposal Number</label>
+      <input type="text" id="proposalNumber" [(ngModel)]="image.proposalNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="applicationNumber" style="color: darkblue; text-align: center;">Appl.Number</label>
+      <input type="text" id="applicationNumber" [(ngModel)]="image.applicationNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="imageType" style="color: darkblue; text-align: center;">Image Type</label>
+      <input type="text" id="imageType" [(ngModel)]="image.imageType" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="scanTime" style="color: darkblue; text-align: center;">Scan Time</label>
+      <input type="text" id="scanTime" [(ngModel)]="image.scanTime" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="imageSize" style="color: darkblue; text-align: center;">Image Size (In KB)</label>
+      <input type="number" id="imageSize" [(ngModel)]="image.imageSize" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="numberOfPages" style="color: darkblue; text-align: center;">Number of Pages</label>
+      <input type="text" id="numberOfPages" [(ngModel)]="image.numberOfPages" class="form-control" />
+    </div>
+    <div class="form-group">
+      <button (click)="viewImage(image)" style="color: darkblue; background-color: gray;">&View Image</button>
+      <button (click)="hideImage(image)" style="color: black; background-color: white; position: absolute; left: 137px; top: 155px; width: 93px; height: 16px; font-family: Tahoma; font-size: 8pt; font-weight: 300;">HIDE</button>
+    </div>
+  </div>
+  <div *ngIf="images.length > 5" style="overflow-y: scroll; height: 200px;"></div>
+  <div class="form-group">
+    <button (click)="viewAllDocuments()" style="color: white; background-color: darkblue;">View All Documents</button>
+  </div>
+</div>

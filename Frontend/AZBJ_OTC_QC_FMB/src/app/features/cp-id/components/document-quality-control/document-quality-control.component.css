@@ -1,0 +1,72 @@
+/* Document Quality Control Section Styles */
+
+/* Document Name field styles */
+.document-name {
+  background-color: gray;
+  max-length: 100px;
+}
+
+/* Doc Received field styles */
+.doc-received {
+  background-color: white;
+  color: black;
+  position: absolute;
+  left: 505px;
+  top: 96px;
+  width: 65px;
+  height: 16px;
+}
+
+/* Prompt 'Doc Received' styles */
+.doc-received-prompt {
+  font-weight: bold;
+  position: absolute;
+  left: 447px; /* 505 - 58 */
+  top: 83px; /* 96 - 13 */
+}
+
+/* Document Type field styles */
+.document-type {
+  background-color: gray;
+  max-length: 100px;
+}
+
+/* AML Document Type field styles */
+.aml-document-type {
+  background-color: gray;
+  max-length: 100px;
+}
+
+/* Proof Type field styles */
+.proof-type {
+  background-color: gray;
+  max-length: 200px;
+}
+
+/* Req Code field styles */
+.req-code {
+  background-color: gray;
+  max-length: 200px;
+}
+
+/* Scrollbar styles */
+.scrollbar {
+  overflow-y: scroll;
+  max-height: 400px; /* Adjust as needed for the section height */
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

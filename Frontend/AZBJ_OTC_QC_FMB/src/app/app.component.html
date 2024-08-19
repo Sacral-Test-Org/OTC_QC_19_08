@@ -1,0 +1,58 @@
+<div style="position: absolute; left: 38px; top: 140px; width: 195px; height: 16px; background-color: gray; color: black; font-family: 'MS Sans Serif'; font-size: 8pt; text-align: left;">
+  <input type="text" value="{{ testNumber }}" readonly maxlength="100" style="width: 100%; height: 100%; border: none; background-color: inherit; color: inherit; font-family: inherit; font-size: inherit; text-align: inherit;" />
+</div>
+
+<!-- PAN Details Section -->
+<div style="position: relative; padding: 20px;">
+  <div style="display: flex; gap: 10px;">
+    <input type="text" placeholder="PAN Number" maxlength="100" style="flex: 1;" />
+    <input type="text" placeholder="PAN Status" maxlength="2000" style="flex: 2;" />
+    <input type="text" placeholder="Name Match" maxlength="2" style="flex: 0.5;" />
+    <input type="text" placeholder="DOB Match" maxlength="2" style="flex: 0.5;" />
+    <input type="hidden" maxlength="2" />
+  </div>
+</div>
+
+<!-- Underwriter Comments Section -->
+<div style="position: relative; padding: 20px; background-color: gray;">
+  <div *ngFor="let comment of comments" style="margin-bottom: 10px; padding: 10px; background-color: white;">
+    <div style="background-color: gray; padding: 5px;">
+      <strong>User ID:</strong> {{ comment.userId }}
+    </div>
+    <div style="background-color: gray; padding: 5px;">
+      <strong>Date & Time:</strong> {{ comment.dateTime | date:'short' }}
+    </div>
+    <div style="background-color: gray; padding: 5px; white-space: pre-wrap;">
+      <strong>UW Comments:</strong> {{ comment.uwComments }}
+    </div>
+  </div>
+  <button (click)="addComment()">Add Comments</button>
+  <button (click)="refreshComments()">Refresh</button>
+</div>
+
+<!-- QC Tab Page -->
+<div id="CAN_SEARCH" style="position: absolute; left: 3px; top: 19px; width: 862px; height: 779px;">
+  <div id="WINDOW1" style="width: 850px; height: 550px;">
+    <div id="IMAGES" style="width: 720px; height: 378px;">
+      <button id="hideButton" (click)="focusProposalNo()" style="position: absolute; left: 137px; top: 155px; width: 93px; height: 16px; background-color: white; color: black; font-family: 'Tahoma'; font-size: 8pt; font-weight: 300;">HIDE</button>
+    </div>
+    <div id="QC" style="position: absolute; left: 295px; top: 485px; width: 135px; height: 16px; background-color: white; color: black; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: 500;">
+      <label for="ipRelation" style="font-weight: bold;">Ip Relation with Premium payer</label>
+      <select id="ipRelation" style="width: 100%; height: 100%;">
+        <option *ngFor="let option of predefinedOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Quality Control Comments Section -->
+<div id="qualityControlSection" style="position: absolute; left: 450px; top: 225px; width: 150px; height: 33px; background-color: white; color: black;">
+  <textarea id="qcComments" readonly maxlength="1000" style="width: 100%; height: 100%; background-color: white; color: black;" (dblclick)="showNewView()"></textarea>
+</div>
+
+<!-- New View -->
+<div id="newView" *ngIf="isNewViewVisible" style="position: absolute; left: 224px; top: 144px; width: 402px; height: 262px; background-color: gray;">
+  <!-- Content of the new view goes here -->
+</div>
+
+<router-outlet></router-outlet>

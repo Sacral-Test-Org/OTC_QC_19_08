@@ -1,0 +1,162 @@
+/* Styles for Proposal Details Component */
+
+.proposalNumber {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.lifeAssuredName {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.applicationNumber {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.policyHolderName {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.comments {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.referToSupervisor {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  position: absolute;
+  left: 450px;
+  top: 209px;
+  width: 150px;
+  height: 16px;
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+}
+
+.submitButton {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px;
+  border: none; /* No border */
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 5px; /* Rounded corners */
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+}
+
+.exitButton {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+  padding: 10px 20px;
+  border: none; /* No border */
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.viewAllDocumentsButton {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.proposalFormButton {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 150px;
+}
+
+.warning-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.referToSupervisorPrompt {
+  font-family: 'Segoe UI';
+  font-size: 9pt;
+  font-weight: bold;
+  position: absolute;
+  left: 450px;
+  top: 193px;
+}
+
+/* Styles for the read-only text area */
+textarea {
+  background-color: white;
+  color: black;
+  position: absolute;
+  left: 450px;
+  top: 225px;
+  width: 150px;
+  height: 33px;
+  resize: none;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-family: 'Arial';
+  font-size: 10pt;
+}
+
+/* Styles for the hidden stacked canvas */
+.hiddenCanvas {
+  background-color: gray;
+  position: absolute;
+  width: 402px;
+  height: 262px;
+  display: none;
+  top: 225px;
+  left: 450px;
+  border: 1px solid #ccc;
+}
+
+/* Styles for the Download KYC Documents button */
+#download-kyc-documents-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px;
+  border: none; /* No border */
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  position: absolute;
+  top: 50px;
+  right: 10px;
+}

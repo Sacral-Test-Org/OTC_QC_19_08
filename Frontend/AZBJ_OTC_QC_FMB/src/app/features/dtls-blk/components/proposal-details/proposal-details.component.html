@@ -1,0 +1,50 @@
+<div class="proposal-details-container" style="width: 850px; height: 550px;">
+  <div class="header">
+    <div class="proposal-number" style="background-color: white; color: black;">
+      Proposal Number: {{ proposalNumber }}
+    </div>
+    <div class="life-assured-name" style="background-color: white; color: black;">
+      Life Assured Name: {{ lifeAssuredName }}
+    </div>
+    <div class="view-all-documents-button">
+      <button (click)="viewAllDocuments()">View All Documents</button>
+    </div>
+    <div class="proposal-form-button">
+      <button id="proposalFormButton" (click)="onProposalFormButtonClick()">Proposal Form</button>
+    </div>
+  </div>
+  <div class="body">
+    <div class="application-number" style="background-color: white; color: black;">
+      Application Number: {{ applicationNumber }}
+    </div>
+    <div class="policy-holder-name" style="background-color: white; color: black;">
+      Policy Holder Name: {{ policyHolderName }}
+    </div>
+    <div class="comments" style="background-color: white; color: black; position: absolute; left: 450px; top: 225px; width: 150px; height: 33px;">
+      Comments: <textarea readonly (dblclick)="onDblClick($event)" maxlength="1000" style="width: 100%; height: 100%; background-color: white; color: black;">{{ comments }}</textarea>
+    </div>
+    <div class="refer-to-supervisor" style="background-color: white; color: black; position: absolute; left: 450px; top: 209px; width: 150px; height: 16px; font-family: 'MS Sans Serif'; font-size: 8pt;">
+      Refer to Supervisor: 
+      <select [(ngModel)]="referToSupervisor">
+        <option value="N">N</option>
+        <option value="Y">Y</option>
+      </select>
+    </div>
+    <div class="tele-video-mer-approved" style="background-color: white; color: black;">
+      Tele/Video Mer (Approved): 
+      <select (change)="handleTeleVideoMerApprovedSelection($event)">
+        <option value="">Select</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="submitBtn" (click)="onSubmitClick()">Submit</button>
+    <button (click)="onExitButtonClick()">Exit</button>
+    <button id="download-kyc-documents-btn" (click)="downloadKycDocuments()">Download KYC Documents</button>
+  </div>
+  <div class="stacked-canvas" *ngIf="isStackedCanvasVisible" style="background-color: gray; position: absolute; width: 402px; height: 262px; left: 224px; top: 144px;">
+    <!-- Content for the stacked canvas goes here -->
+  </div>
+</div>

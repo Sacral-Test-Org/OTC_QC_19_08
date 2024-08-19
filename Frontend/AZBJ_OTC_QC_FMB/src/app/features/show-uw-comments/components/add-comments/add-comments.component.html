@@ -1,0 +1,10 @@
+<div class="add-comments-form">
+  <h2>Add Your Comments</h2>
+  <form>
+    <div class="form-group">
+      <label for="userComment">Comment:</label>
+      <textarea id="userComment" [(ngModel)]="userComment" name="userComment" class="form-control" rows="5"></textarea>
+    </div>
+    <button type="button" (click)="saveComments()" class="btn btn-primary">Save</button>
+  </form>
+</div>

@@ -1,0 +1,79 @@
+<div>
+  <div>
+    <label>Current Date:</label>
+    <span>{{ current_date }}</span>
+  </div>
+  <div>
+    <label>User Information:</label>
+    <span>{{ user_info }}</span>
+  </div>
+  <button (click)="exit()" style="position: absolute; left: 12px; top: 5px; width: 29px; height: 20px; background-color: gray; color: black; font-family: 'Tahoma'; font-size: 8pt; font-weight: 300;">EXIT</button>
+  <input type="hidden" name="product_ID" value="{{ product_ID_hidden }}">
+  <input type="hidden" name="contract_ID" value="{{ contract_ID_hidden }}">
+  <div>
+    <label>Address Edited:</label>
+    <input type="text" name="address_edited" value="{{ ADDRESS_EDITED_field }}" style="background-color: yellow; color: red;">
+  </div>
+  <button (click)="saveBankDetails()">SAVE BANK DETAILS</button>
+  <div>
+    <label>First Name:</label>
+    <input type="text" name="first_name" [(ngModel)]="first_name" maxlength="50" style="text-transform: uppercase;">
+  </div>
+  <div>
+    <label>Middle Name:</label>
+    <input type="text" name="middle_name" [(ngModel)]="middle_name" maxlength="50" style="text-transform: uppercase;">
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input type="text" name="last_name" [(ngModel)]="last_name" maxlength="50" style="text-transform: uppercase;">
+  </div>
+  <div>
+    <label>PAN Status:</label>
+    <span>{{ PAN_STATUS_field }}</span>
+  </div>
+  <div>
+    <label>PAN Card Verification:</label>
+    <input type="radio" name="pan_card_verification" value="Y" [(ngModel)]="PAN_CARD_VERIFICATION_radio_group"> Yes
+    <input type="radio" name="pan_card_verification" value="N" [(ngModel)]="PAN_CARD_VERIFICATION_radio_group"> No
+  </div>
+  <button (click)="validatePAN()">VALIDATE</button>
+  <div>
+    <label>PH No PAN LOV:</label>
+    <select name="ph_no_pan_lov" [(ngModel)]="PH_NO_PAN_LOV_field" [disabled]="!PH_NO_PAN_CARD_checkbox" [hidden]="!PH_NO_PAN_CARD_checkbox">
+      <option *ngFor="let item of phNoPanLovOptions" [value]="item.value">{{ item.label }}</option>
+    </select>
+  </div>
+  <div>
+    <label>PAN Card:</label>
+    <input type="text" name="pan_card" [(ngModel)]="PAN_CARD_field" maxlength="10" style="text-transform: uppercase; position: absolute; left: 82px; top: 548px; width: 120px; height: 18px; background-color: white; color: black;" placeholder="Pan Card No" (input)="onPanCardInputChange($event)">
+  </div>
+  <div>
+    <label>IP PH:</label>
+    <select name="ip_ph" [(ngModel)]="IP_PH_field">
+      <option *ngFor="let item of ipPhOptions" [value]="item.value">{{ item.label }}</option>
+    </select>
+  </div>
+  <div>
+    <label>Pan Card not Available:</label>
+    <input type="checkbox" name="ph_no_pan_card" [(ngModel)]="PH_NO_PAN_CARD_checkbox" (change)="onCheckboxChange($event)">
+  </div>
+  <input type="hidden" name="rrb_bank_account" value="{{ RRB_BANK_ACCOUNT_hidden_checkbox }}">
+  <button (click)="viewPreviousPolicyPanDetails()">Previous Policy Pan Details</button>
+  <div>
+    <label>Date of Birth:</label>
+    <input type="text" name="pc_dob" [(ngModel)]="PC_DOB_field" placeholder="DD/MM/RRRR">
+  </div>
+  <div>
+    <label>PAN Card Not Received:</label>
+    <input type="checkbox" name="pan_card_not_received" [(ngModel)]="panCardNotReceivedFlag" (change)="handlePanCardNotReceivedFlagChange($event)">
+  </div>
+  <div>
+    <label>Reason:</label>
+    <select name="reason_dropdown" [(ngModel)]="reasonDropdown" [disabled]="!panCardNotReceivedFlag">
+      <option *ngFor="let reason of reasonOptions" [value]="reason.value">{{ reason.label }}</option>
+    </select>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>

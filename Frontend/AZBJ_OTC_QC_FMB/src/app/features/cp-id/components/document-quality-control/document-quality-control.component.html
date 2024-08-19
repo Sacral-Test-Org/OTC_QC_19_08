@@ -1,0 +1,73 @@
+<div class="document-quality-control">
+  <div class="record" *ngFor="let record of records; let i = index" [hidden]="i >= 6">
+    <div class="field">
+      <label>Document Name:</label>
+      <input type="text" [value]="record.documentName" readonly maxlength="100" class="readonly-field" />
+    </div>
+    <div class="field">
+      <label class="doc-received-label">Doc Received:</label>
+      <select [(ngModel)]="record.docReceived" class="editable-field doc-received-dropdown">
+        <option *ngFor="let option of docReceivedOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Document Type:</label>
+      <input type="text" [value]="record.documentType" readonly maxlength="100" class="readonly-field" />
+    </div>
+    <div class="field">
+      <label>AML Document Type:</label>
+      <input type="text" [value]="record.amlDocumentType" readonly maxlength="100" class="readonly-field" />
+    </div>
+    <div class="field">
+      <label>Proof Type:</label>
+      <input type="text" [value]="record.proofType" readonly maxlength="200" class="readonly-field" />
+    </div>
+    <div class="field">
+      <label>Req Code:</label>
+      <input type="text" [value]="record.reqCode" readonly maxlength="200" class="readonly-field" />
+    </div>
+  </div>
+  <div class="scrollbar" *ngIf="records.length > 6">
+    <button (click)="scrollUp()">&#9650;</button>
+    <button (click)="scrollDown()">&#9660;</button>
+  </div>
+</div>
+
+<style>
+.document-quality-control {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.readonly-field {
+  background-color: gray;
+}
+.editable-field {
+  background-color: white;
+}
+.scrollbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scrollbar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+.doc-received-dropdown {
+  position: absolute;
+  top: 96px;
+  left: 505px;
+  width: 65px;
+  height: 16px;
+  background-color: white;
+  color: black;
+}
+.doc-received-label {
+  font-weight: bold;
+  position: absolute;
+  top: 83px;
+  left: 447px;
+}
+</style>

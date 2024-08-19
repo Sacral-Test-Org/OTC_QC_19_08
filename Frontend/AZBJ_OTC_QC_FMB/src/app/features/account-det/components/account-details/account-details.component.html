@@ -1,0 +1,73 @@
+<div class="account-details-container">
+  <form>
+    <div class="form-group">
+      <label for="accountHolderName">Account Holder Name</label>
+      <input type="text" id="accountHolderName" name="accountHolderName" [(ngModel)]="accountDetails.accountHolderName" (ngModelChange)="toUpperCase($event)" required [disabled]="accountDetails.bypassBankDetails" />
+    </div>
+
+    <div class="form-group">
+      <label for="bankName">Bank Name</label>
+      <input type="text" id="bankName" name="bankName" [(ngModel)]="accountDetails.bankName" (ngModelChange)="toUpperCase($event)" required [disabled]="accountDetails.bypassBankDetails" />
+    </div>
+
+    <div class="form-group">
+      <label for="branchName">Branch Name</label>
+      <input type="text" id="branchName" name="branchName" [(ngModel)]="accountDetails.branchName" (ngModelChange)="toUpperCase($event)" required [disabled]="accountDetails.bypassBankDetails" />
+    </div>
+
+    <div class="form-group">
+      <label for="micrCode">MICR Code</label>
+      <input type="text" id="micrCode" name="micrCode" [(ngModel)]="accountDetails.micrCode" (ngModelChange)="toUpperCase($event)" required [disabled]="accountDetails.bypassBankDetails" />
+    </div>
+
+    <div class="form-group" style="position: absolute; left: 295px; top: 437px; width: 169px; height: 16px;">
+      <label for="ifscCode" style="font-family: 'MS Sans Serif'; font-size: 12px; font-weight: bold;">IFSC Code</label>
+      <input type="text" id="ifscCode" name="ifscCode" [(ngModel)]="accountDetails.ifscCode" (ngModelChange)="toUpperCase($event)" (blur)="handleIfscCodeInput(accountDetails.ifscCode)" maxlength="15" style="background-color: white; color: black; text-transform: uppercase;" required [disabled]="accountDetails.bypassBankDetails" />
+    </div>
+
+    <div class="form-group" style="position: absolute; left: 295px; top: 485px; width: 135px; height: 16px;">
+      <label for="relationshipType" style="font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: bold; margin-right: 3px;">Ip Relation with Premium payer</label>
+      <select id="relationshipType" name="relationshipType" [(ngModel)]="accountDetails.relationshipType" style="background-color: white; color: black; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: normal;" required [disabled]="accountDetails.bypassBankDetails">
+        <option *ngFor="let type of relationshipTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tppFlag">TPP Flag</label>
+      <input type="checkbox" id="tppFlag" name="tppFlag" [(ngModel)]="accountDetails.tppFlag" />
+    </div>
+
+    <div class="form-group">
+      <label for="bypassBankDetails">Bypass Bank Details</label>
+      <input type="checkbox" id="bypassBankDetails" name="bypassBankDetails" [(ngModel)]="accountDetails.bypassBankDetails" (change)="onBypassBankDetailsChange($event)" />
+    </div>
+
+    <div class="form-group">
+      <label for="accountType">Account Type</label>
+      <select id="accountType" name="accountType" [(ngModel)]="accountDetails.accountType" (change)="onAccountTypeChange($event)" required [disabled]="accountDetails.bypassBankDetails">
+        <option *ngFor="let type of accountTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="accountNumber">Account Number</label>
+      <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="accountDetails.accountNumber" (ngModelChange)="toUpperCase($event)" required [disabled]="accountDetails.bypassBankDetails" />
+    </div>
+
+    <div class="form-group">
+      <button type="button" id="copyBankDetailsButton" (click)="copyBankDetails()">Copy Bank Details</button>
+    </div>
+
+    <div class="form-group">
+      <p id="pennyDropStatusMessage">{{ pennyDropStatusMessage }}</p>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" (click)="saveAccountDetails()">Save</button>
+    </div>
+
+    <div class="form-group">
+      <button type="button" id="sameBankDetailsButton" (click)="openSameBankDetailsForm()" style="background-color: gray; color: black; font-weight: bold;">Same Bank Dtls</button>
+    </div>
+  </form>
+</div>

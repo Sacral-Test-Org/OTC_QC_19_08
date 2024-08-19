@@ -1,0 +1,16 @@
+<div class="comments-section">
+  <label for="uw-comments">UW Comments</label>
+  <div class="comment" *ngFor="let comment of comments">
+    <div class="comment-header">
+      <span class="user-id" style="background-color: gray;">{{ comment.userId }}</span>
+      <span class="date-time" style="background-color: gray;">{{ comment.dateTime }}</span>
+    </div>
+    <div class="comment-body" style="background-color: gray;">
+      <textarea id="uw-comments" readonly rows="3" maxlength="1000" (dblclick)="onDoubleClick(comment.uwComments)" style="position: absolute; top: 41px; left: 162px; width: 171px; height: 25px; background-color: gray;">{{ comment.uwComments }}</textarea>
+    </div>
+  </div>
+  <div class="buttons">
+    <button (click)="addComments()">Add Comments</button>
+    <button (click)="onRefreshButtonClick()">Refresh</button>
+  </div>
+</div>

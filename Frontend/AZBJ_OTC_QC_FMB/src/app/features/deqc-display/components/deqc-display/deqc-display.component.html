@@ -1,0 +1,114 @@
+<div class="display-section">
+  <table>
+    <thead>
+      <tr>
+        <th>Application Number</th>
+        <th>Status</th>
+        <th>Receipt Number</th>
+        <th>Receipt Date</th>
+        <th>Applicant Name</th>
+        <th>Policyholder Name</th>
+        <th>Partner Name</th>
+        <th>Document Status</th>
+        <th>Checkbox</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records; let i = index" [hidden]="i >= 10">
+        <td>{{ record.applicationNumber }}</td>
+        <td>{{ record.status }}</td>
+        <td>{{ record.receiptNumber }}</td>
+        <td>{{ record.receiptDate | date }}</td>
+        <td>{{ record.applicantName }}</td>
+        <td>{{ record.policyholderName }}</td>
+        <td>{{ record.partnerName }}</td>
+        <td>{{ record.documentStatus }}</td>
+        <td>
+          <input type="checkbox" [(ngModel)]="record.checkbox" (change)="handleCheckboxChange($event)" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="records.length > 10" class="scrollbar">
+    <button (click)="scrollUp()">Up</button>
+    <button (click)="scrollDown()">Down</button>
+  </div>
+  <div class="action-buttons">
+    <button id="linkSave" [disabled]="!isCheckboxChecked">LINKSAVE</button>
+    <button id="viewDocs" [disabled]="!isCheckboxChecked" (click)="onViewDocumentsButtonClick()">VIEW_DOCS</button>
+    <button id="uploadDocs" [disabled]="isCheckboxChecked">UPLOAD_DOCS</button>
+    <button id="qc" [disabled]="!isCheckboxChecked" (click)="navigateToDisplayScreen()">QC</button>
+    <button id="reject" [disabled]="!isCheckboxChecked" (click)="onRejectButtonClick()">REJECT</button>
+  </div>
+</div>
+
+<div *ngIf="selectedCase">
+  <h2>Selected Case Details</h2>
+  <p><strong>Application Number:</strong> {{ selectedCase.applicationNumber }}</p>
+  <p><strong>Status:</strong> {{ selectedCase.status }}</p>
+  <p><strong>Receipt Number:</strong> {{ selectedCase.receiptNumber }}</p>
+  <p><strong>Receipt Date:</strong> {{ selectedCase.receiptDate | date }}</p>
+  <p><strong>Applicant Name:</strong> {{ selectedCase.applicantName }}</p>
+  <p><strong>Policyholder Name:</strong> {{ selectedCase.policyholderName }}</p>
+  <p><strong>Partner Name:</strong> {{ selectedCase.partnerName }}</p>
+  <p><strong>Document Status:</strong> {{ selectedCase.documentStatus }}</p>
+</div>
+
+<div *ngIf="message">
+  <h3>{{ message }}</h3>
+</div>
+
+<style>
+.display-section {
+  width: 100%;
+  height: auto;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.scrollbar {
+  margin-top: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: not-allowed;
+}
+
+.action-buttons button:enabled {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+</style>

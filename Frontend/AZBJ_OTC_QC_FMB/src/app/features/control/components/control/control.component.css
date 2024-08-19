@@ -1,0 +1,195 @@
+/* Styles for the control component */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Read-only fields */
+.read-only {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Hidden fields */
+.hidden {
+  display: none;
+}
+
+/* Address edited field */
+.address-edited {
+  background-color: yellow;
+  color: red;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button.exit {
+  background-color: #dc3545;
+}
+
+button.save-bank-details {
+  background-color: #28a745;
+}
+
+button.validate {
+  background-color: #ffc107;
+}
+
+button.previous-policy-pan-details {
+  background-color: #17a2b8;
+}
+
+/* Input fields */
+input[type="text"] {
+  text-transform: uppercase;
+  max-length: 50;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+input[type="date"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Radio group */
+.radio-group {
+  margin-bottom: 10px;
+}
+
+/* Checkbox */
+.checkbox {
+  margin-bottom: 10px;
+}
+
+/* List items */
+.list-item {
+  margin-bottom: 10px;
+}
+
+/* Disabled list items */
+.list-item.disabled {
+  display: none;
+}
+
+/* EXIT button styles */
+button.exit {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  width: 29px;
+  height: 20px;
+  background-color: gray;
+  color: black;
+  font-family: Tahoma, sans-serif;
+  font-size: 8pt;
+  font-weight: 300;
+}
+
+/* Styles for the checkbox and PAN Card information fields */
+.checkbox {
+  margin-bottom: 10px;
+}
+
+#PH_NO_PAN_LOV {
+  display: none;
+  margin-bottom: 10px;
+}
+
+input[type="text"].pan-card {
+  margin-bottom: 10px;
+}
+
+input[type="text"].first-name,
+input[type="text"].middle-name,
+input[type="text"].last-name,
+input[type="text"].status {
+  margin-bottom: 10px;
+}
+
+/* PAN Card Number Input Field Styles */
+input[type="text"].pan-card-number {
+  position: absolute;
+  left: 82px;
+  top: 548px;
+  width: 120px;
+  height: 18px;
+  background-color: white;
+  color: black;
+}
+
+/* Save Bank Details Button Styles */
+button.save-bank-details {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+button.save-bank-details:hover {
+  background-color: #218838;
+}
+
+button.save-bank-details:active {
+  background-color: #1e7e34;
+}
+
+/* PAN Card Validation Styles */
+input.panCardInput {
+  border: 2px solid #007bff;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+select.partnerTypeSelect {
+  border: 2px solid #007bff;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input.nameInput {
+  border: 2px solid #007bff;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input.dobInput {
+  border: 2px solid #007bff;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.validationMessage {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
